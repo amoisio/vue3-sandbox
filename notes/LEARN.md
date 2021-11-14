@@ -21,9 +21,9 @@ Vue.createApp({
 
 When using vue-loader, templates inside *.vue files are pre-compiled into JavaScript at build time. You don’t really need the compiler in the final bundle, and can therefore use the runtime-only build.
 
-## Directives
+## Introduction
 
-Prefixed with `v-`. They apply special reactive behavious to the rendered DOM.
+- Directives are prefixed with `v-`. They apply special reactive behavious to the rendered DOM.
 
 ## Component and application instances
 
@@ -50,3 +50,19 @@ Created with `createApp'. Can be used to register globals which can then be used
 
 ![Hooks](https://v3.vuejs.org/images/lifecycle.svg)
 
+## Template syntax
+
+- Vue renders templates into virtual dom render functions.
+- `v-once` one-time rendereding of affected nodes (will not change on data change)
+- `v-html` for replacing the element with raw HTML. **Do not use for composing template partials**.
+- Binding attribute values is done with `v-bind`. If the value is `null` or `undefined` then the attribute will not be
+incluced in the rendered HTML.
+- Some directives can take arguments. These are denoted by a colon after the directive name. Eg. `v-bind:href="value"` binds
+the value of `value` to `href`.
+- Dynamic binding to an attribute can be done with `[]` e.g. `v-bind:[attributeName]="value"`
+
+### Caveats
+
+- With dynamic arguments, `null` is a special value and can be used to remove a binding.
+- Avoid naming dynamic argument keys with uppercase letters as browsers will coerce attribute names into lowercase.
+- Avoid accessing user defined globals in template expressions.
