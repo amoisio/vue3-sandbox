@@ -20,3 +20,7 @@ Vue.createApp({
 ```
 
 When using vue-loader, templates inside *.vue files are pre-compiled into JavaScript at build time. You don’t really need the compiler in the final bundle, and can therefore use the runtime-only build.
+
+## Directives
+
+Prefixed with `v-`. They apply special reactive behavious to the rendered DOM.
