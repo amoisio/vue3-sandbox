@@ -66,3 +66,9 @@ the value of `value` to `href`.
 - With dynamic arguments, `null` is a special value and can be used to remove a binding.
 - Avoid naming dynamic argument keys with uppercase letters as browsers will coerce attribute names into lowercase.
 - Avoid accessing user defined globals in template expressions.
+
+## Data Properties and Methods
+
+- Instance properties are **only** added when the instance is first created => ensure they are all present in the object returned by the data function. Where necessary, use null, undefined or some other placeholder value for properties where the desired value isn't yet available.
+- Vue binds `this` for methods to the component instance. **Do not use arrow functions if using `this` within the function**.
+- Methods called from a template should not have any side effects, such as changing data or triggering asynchronous processes. If you find yourself tempted to do that you should probably use a lifecycle hook instead. <-- Interesting - I wonder how submit should then be handled?
