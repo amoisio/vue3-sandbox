@@ -72,3 +72,8 @@ the value of `value` to `href`.
 - Instance properties are **only** added when the instance is first created => ensure they are all present in the object returned by the data function. Where necessary, use null, undefined or some other placeholder value for properties where the desired value isn't yet available.
 - Vue binds `this` for methods to the component instance. **Do not use arrow functions if using `this` within the function**.
 - Methods called from a template should not have any side effects, such as changing data or triggering asynchronous processes. If you find yourself tempted to do that you should probably use a lifecycle hook instead. <-- Interesting - I wonder how submit should then be handled?
+
+## Computed properties and watchers
+
+- Computed properties are cached based on its reactive properties.
+- Use watchers when you want to perform asynchronous or expensive operations in response to changing data.
