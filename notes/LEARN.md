@@ -96,3 +96,15 @@ the value of `value` to `href`.
 - Vue does in-place patching instead of moving DOM elements around. This is efficient but is suitable only when **list render output does not rely on child component state or temporary DOM state (e.g. form input values).**
 - Array change detection supports methods: `push()`, `pop()`, `shift()`, `unshift()`, `splice()`, `sort()`, `reverse()`.
 - When using non-mutating methods on an array, you can replace the old array to render changes. Vue knows how to do this update in a performant way (the entire DOM is not lost).
+
+## Event Handling
+
+Event modifiers
+|Modifier|Description|
+===
+|`.stop`|Stop propagation - the event is not propagated up the DOM|
+|`.prevent`|Prevents default operation|
+|`.capture`||
+|`.self`||
+|`.once`|Once fires the event once|
+|`.passive`||
